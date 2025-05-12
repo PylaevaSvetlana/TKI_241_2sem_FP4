@@ -18,10 +18,7 @@ int main()
 	vector<int> V{ -175, 579, 148, 47,-1};
 	function<bool(int, int)> Func = less_abs();
 	sort(V.begin(), V.end(), Func);
-	for (int i = 0; i != V.size(); i++)
-	{
-		cout << V[i]<< " ";
-	}
+	for_each(V.begin(), V.end(), [](int num) { cout << num << " "; });
 
 	return 0;
 }
