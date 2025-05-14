@@ -15,9 +15,14 @@ struct less_abs
 
 int main()
 {
-	vector<int> V{ -175, 579, 148, 47,-1};
+	vector<int> V;
+	cout << " Enter numbers: ";
+	copy(istream_iterator<int>(cin), istream_iterator<int>(), back_inserter(V));
+
 	function<bool(int, int)> Func = less_abs();
 	sort(V.begin(), V.end(), Func);
+
+	cout << " Result: ";
 	for_each(V.begin(), V.end(), [](int num) { cout << num << " "; });
 
 	return 0;
